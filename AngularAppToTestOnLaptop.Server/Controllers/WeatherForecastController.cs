@@ -8,7 +8,7 @@ namespace AngularAppToTestOnLaptop.Server.Controllers
     {
         private static readonly string[] Summaries = new[]
         {
-            "TESTINGGG, YAYYAYAYA, YES"
+            "it works the branch", "yes", "me when i "
         };
 
         private readonly ILogger<WeatherForecastController> _logger;
