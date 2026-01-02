@@ -1,0 +1,52 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20mm;
+  background-color: lightgray;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbarLinks {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.navbarLinks a {
+    color: deepskyblue;
+}
+
+.navbarLinks a:hover {
+    text-decoration: underline;
+}
+
+#appTitleDiv {
+    color: black;
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    font-size: 25px;
+}
+
+#navbarLinksDiv {
+    width: 600px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarLinks li {
+    padding: 0 20px;
+    border-right: 1px solid black; 
+}
+
+.navbarLinks li:last-child { /* remove the line from the last item */
+    border-right: none;
+}
