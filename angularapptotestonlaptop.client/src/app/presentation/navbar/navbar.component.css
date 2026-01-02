@@ -1,0 +1,45 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px;
+  padding: 0 20mm;
+  background-color: lightgray;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.navbarLinks {
+    list-style: none;
+    display: flex;
+    gap: 10mm;
+    padding: 0mm;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.navbarLinks a {
+    color: deepskyblue;
+}
+
+.navbarLinks a:hover {
+    text-decoration: underline;
+}
+
+#appTitleDiv {
+    color: black;
+    width: 200px;
+    height: 30px;
+    background-color: white;
+    font-size: 25px;
+}
+
+#navbarLinksDiv {
+  width: 600px;
+  height: 30px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
