@@ -11,12 +11,10 @@
 }
 
 .navbarLinks {
-    list-style: none;
-    display: flex;
-    gap: 10mm;
-    padding: 0mm;
-    display: flex;
-    flex-wrap: wrap;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
 }
 
 .navbarLinks a {
@@ -36,10 +34,19 @@
 }
 
 #navbarLinksDiv {
-  width: 600px;
-  height: 30px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    width: 600px;
+    height: 30px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbarLinks li {
+    padding: 0 20px;
+    border-right: 1px solid black; 
+}
+
+.navbarLinks li:last-child { /* remove the line from the last item */
+    border-right: none;
 }
