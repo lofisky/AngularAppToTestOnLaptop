@@ -2,7 +2,8 @@ using AngularAppToTestOnLaptop.Server.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Configuration.AddJsonFile("appsettings.secret.json", optional: true, reloadOnChange: true);
+// optional so the json file loading isnt necessary for the running of proj, but also reload if anything changes without system restart like adjusted db string info updates
+builder.Configuration.AddJsonFile("appsettings.secret.json", optional: true, reloadOnChange: true); 
 
 // Add services to the container.
 
