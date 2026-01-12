@@ -1,15 +1,18 @@
 <h2 class="logInTitle">Log In</h2>
 
 <div class="logInFormDiv">
-  <form action="/login.component.ts">
+  <form (ngSubmit)="login()">
     <div class="emailAndPasswordInputDiv">
-      <input type="text" id="userEmail" name="userEmail" placeholder="Email Input"><br>
-      <input type="text" id="userPassword" name="userPassword" placeholder="Password Input"><br><br>
+      <input type="email" [(ngModel)]="email" name="email" placeholder="Email Input" required><br>
+      <input type="password" [(ngModel)]="password" name="password" placeholder="Password Input" required><br><br>
     </div>
 
     <div class="logInAndSignUpButtonDiv">
-      <input type="submit" value="Log In">
+      <button type="submit">Log In</button>
       <button type="button" (click)="redirectToRegisterPage()">Sign Up</button>
     </div>
   </form>
 </div>
+
+
+<p *ngIf="loginMessage"> {{ loginMessage }} </p>
