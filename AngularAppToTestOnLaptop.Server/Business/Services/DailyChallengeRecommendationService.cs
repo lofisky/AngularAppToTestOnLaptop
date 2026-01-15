@@ -1,4 +1,4 @@
-﻿namespace AngularAppToTestOnLaptop.Server.Business
+﻿namespace AngularAppToTestOnLaptop.Server.Business.Services
 {
     public class DailyChallengeRecommendationService
     {

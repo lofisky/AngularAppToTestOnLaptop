@@ -1,6 +1,0 @@
-﻿namespace AngularAppToTestOnLaptop.Server.Persistence
-{
-    public class UserAndAdminRepository
-    {
-    }
-}
