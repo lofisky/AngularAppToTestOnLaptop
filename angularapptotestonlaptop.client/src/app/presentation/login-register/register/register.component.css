@@ -21,19 +21,19 @@
   padding: 0;
 }
 
-.usernameAndEmailAndPasswordInputDiv input {
+  .usernameAndEmailAndPasswordInputDiv input {
     background-color: white;
     border: 2px solid lightgray;
     padding: 5px 15px;
     width: 50vw;
     height: 30px;
     margin-bottom: 10px;
-}
+  }
 
 .createProfileButtonDiv {
   display: flex;
   justify-content: center;
-  margin-top: 48vh;
+  margin-top: 52vh;
   gap: 50px;
   text-decoration: underline;
   text-decoration-color: deepskyblue;
@@ -47,7 +47,20 @@ input[type="submit"] {
   color: deepskyblue;
 }
 
+button {
+  background-color: white;
+  border: 2px solid lightgray;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: deepskyblue;
+}
+
 input[type="submit"]:hover {
+  background-color: #cacaca;
+  border-color: darkgray;
+}
+
+button:hover {
   background-color: #cacaca;
   border-color: darkgray;
 }
