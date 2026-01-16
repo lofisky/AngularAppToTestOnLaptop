@@ -16,5 +16,10 @@ namespace AngularAppToTestOnLaptop.Server.Business.Services
         {
             return _userRepository.Get(email, password) != null;
         }
+
+        public bool Register(string username, string userEmail, string userPassword)
+        {
+           return _userRepository.CreateUser(username, userEmail, userPassword) != null;
+        }
     }
 }

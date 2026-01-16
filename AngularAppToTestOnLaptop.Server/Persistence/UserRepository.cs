@@ -39,13 +39,64 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
                     Password = reader.GetString(reader.GetOrdinal("password_hash"))
                 };
             }
-                return new User
+            return new User
             {
                 UserId = reader.GetInt32(reader.GetOrdinal("user_id")),
                 Username = reader.GetString(reader.GetOrdinal("username")),
                 Email = reader.GetString(reader.GetOrdinal("email")),
                 Password = reader.GetString(reader.GetOrdinal("password_hash"))
             };
+        }
+
+        public User? GetUserByEmail(string email)
+        {
+            using var connection = _db.GetConnection();
+            connection.Open();
+
+            using var command = new NpgsqlCommand("SELECT user_id, username, email, password_hash, role FROM users WHERE email = @email", connection);
+
+            command.Parameters.AddWithValue("@email", email);
+
+            using var reader = command.ExecuteReader();
+
+            if (!reader.Read()) return null;
+
+            return new User
+            {
+                UserId = reader.GetInt32(reader.GetOrdinal("user_id")),
+                Username = reader.GetString(reader.GetOrdinal("username")),
+                Email = reader.GetString(reader.GetOrdinal("email")),
+                Password = reader.GetString(reader.GetOrdinal("password_hash"))
+            };
+        }
+
+        public User CreateUser(string username, string userEmail, string userPassword)
+        {
+            var existingUser = GetUserByEmail(userEmail);
+            if (existingUser != null) return null;
+            
+            using var connection = _db.GetConnection();
+            connection.Open();
+
+            using var command = new NpgsqlCommand("INSERT INTO users (username, email, password_hash, role) VALUES (@username, @userEmail, @userPassword, 'user')", connection);
+
+            command.Parameters.AddWithValue("@username", username);
+            command.Parameters.AddWithValue("@userEmail", userEmail);
+            command.Parameters.AddWithValue("@userPassword", userPassword);
+
+            var result = command.ExecuteNonQuery();
+
+            if(result > 0)
+            {
+                return new User
+                {
+                    Username = username, 
+                    Email = userEmail,
+                    Password = userPassword,
+                    Role = "user"
+                };
+            }
+            return null;
         }
     }
 }
