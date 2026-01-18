@@ -3,13 +3,19 @@
 <div class="signUpFormDiv">
   <form (ngSubmit)="register()">
     <div class="usernameAndEmailAndPasswordInputDiv">
-      <input type="text" [(ngModel)]="username" name="username" placeholder="Username Input" required><br>
-      <input type="email" [(ngModel)]="userEmail" name="userEmail" placeholder="Email Input" required><br>
-      <input type="password" [(ngModel)]="userPassword" name="userPassword" placeholder="Password Input" required><br><br>
+      <input type="text" [(ngModel)]="username" name="username" placeholder="Username Input" required #usernameField="ngModel">
+      <div *ngIf="usernameField.touched && usernameField.invalid" class="error-message">Username is required.</div>
+      <input type="email" [(ngModel)]="userEmail" name="userEmail" placeholder="Email Input" required email #emailField="ngModel">
+      <div *ngIf="emailField.touched && emailField.invalid" class="error-message">
+        <div *ngIf="emailField.errors?.['required']">Email is required.</div>
+        <div *ngIf="emailField.errors?.['email']">Invalid email format.</div>
+      </div>
+      <input type="password" [(ngModel)]="userPassword" name="userPassword" placeholder="Password Input" required #passwordField="ngModel">
+      <div *ngIf="passwordField.touched && passwordField.invalid" class="error-message">Password is required.</div><br />
     </div>
 
     <div class="createProfileButtonDiv">
-      <button type="submit" >Create Profile</button>
+      <button type="submit" [disabled]="!usernameField.valid || !emailField.valid || !passwordField.valid">Create Profile</button>
       <button type="button" (click)="redirectToLoginPage()">Log In</button>
     </div>
   </form>

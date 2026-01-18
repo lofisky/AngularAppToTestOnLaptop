@@ -32,13 +32,17 @@
   }
 
 .logInAndSignUpButtonDiv {
-    display: flex;
-    justify-content: center;
-    margin-top: 58vh;
-    gap: 50px;
-    text-decoration: underline;
-    text-decoration-color: deepskyblue;
+  position: absolute;
+  top: 85vh; 
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  text-decoration: underline;
+  text-decoration-color: deepskyblue;
 }
+
 
 input[type="submit"] {
     background-color: white;
@@ -64,4 +68,9 @@ input[type="submit"]:hover {
 button:hover {
     background-color: #cacaca;
     border-color: darkgray;
+}
+
+.error-message {
+    color: red;
+    font-size: 15px;
 }
