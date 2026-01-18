@@ -1,0 +1,16 @@
+.profileViewTitle {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+}
+
+.profileViewDiv {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  margin: 50px auto;
+  padding: 50px;
+  height: 70vh;
+  align-items: start;
+}
