@@ -31,9 +31,12 @@
   }
 
 .createProfileButtonDiv {
+  position: absolute;
+  top: 85vh;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
-  margin-top: 52vh;
   gap: 50px;
   text-decoration: underline;
   text-decoration-color: deepskyblue;
@@ -63,4 +66,9 @@ input[type="submit"]:hover {
 button:hover {
   background-color: #cacaca;
   border-color: darkgray;
+}
+
+.error-message {
+  color: red;
+  font-size: 15px;
 }

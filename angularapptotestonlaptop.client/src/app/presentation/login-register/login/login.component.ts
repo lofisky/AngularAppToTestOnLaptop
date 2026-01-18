@@ -18,19 +18,27 @@ export class LoginComponent {
   }
 
   login() {
-    this.http.post<{ username: string, email: string }>('https://localhost:7109/api/auth/login', {
-      email: this.email,
-      password: this.password
-    }).subscribe(user => {
-      if (user) {
-        localStorage.setItem('currentUser', JSON.stringify(user));
+    this.email = this.email.trim().replace(/\S+/g, ''); //trim spaces and remove inner whitespaces
+    this.password = this.password.trim().replace(/\S+/g, '');
 
-        this.loginMessage = `Login succeeded! Welcome, ${user.username}`;
-        console.log("login success!Q!");
-      }
-    }, error => {
-      this.loginMessage = 'errorrrr';
-      console.error(error);
-    });
+    if (this.email && this.password) {
+      this.http.post<{ username: string, email: string }>('https://localhost:7109/api/auth/login', {
+        email: this.email,
+        password: this.password
+      }).subscribe(user => {
+        if (user) {
+          localStorage.setItem('currentUser', JSON.stringify(user));
+
+          this.loginMessage = `Login succeeded! Welcome, ${user.username}`;
+          console.log("login success!Q!");
+        }
+      }, error => {
+        this.loginMessage = 'errorrrr';
+        console.error(error);
+      });
+    }
+    else {
+      this.loginMessage = 'Please fill in all fields.';
+    }
   }
 }
