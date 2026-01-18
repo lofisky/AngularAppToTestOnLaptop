@@ -7,13 +7,15 @@ import { NavbarComponent } from './presentation/navbar/navbar.component';
 import { LoginComponent } from './presentation/login-register/login/login.component';
 import { RegisterComponent } from './presentation/login-register/register/register.component';
 import { FormsModule } from '@angular/forms';
+import { ProfileViewComponent } from './presentation/profile-view/profile-view.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileViewComponent
   ],
   imports: [
     BrowserModule,
