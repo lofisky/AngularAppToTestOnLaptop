@@ -18,14 +18,17 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
             using var connection = _db.GetConnection();
             connection.Open();
 
-            using var command = new NpgsqlCommand("SELECT user_id, username, email, password_hash, role FROM users WHERE email = @email AND password_hash = @password", connection);
+            using var command = new NpgsqlCommand("SELECT user_id, username, email, password_hash, role FROM users WHERE email = @email", connection);
             
             command.Parameters.AddWithValue("@email", email);
-            command.Parameters.AddWithValue("@password", password);
 
             using var reader = command.ExecuteReader();
 
             if (!reader.Read()) return null;
+
+            string storedPasswordHash = reader.GetString(reader.GetOrdinal("password_hash")); 
+
+            if (!BCrypt.Net.BCrypt.Verify(password, storedPasswordHash)) return null; //verify provided password against db stored hash
 
             var role = reader.GetString(reader.GetOrdinal("role"));
 
@@ -36,7 +39,7 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
                     UserId = reader.GetInt32(reader.GetOrdinal("user_id")),
                     Username = reader.GetString(reader.GetOrdinal("username")),
                     Email = reader.GetString(reader.GetOrdinal("email")),
-                    Password = reader.GetString(reader.GetOrdinal("password_hash"))
+                    Password = storedPasswordHash
                 };
             }
             return new User
@@ -44,7 +47,7 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
                 UserId = reader.GetInt32(reader.GetOrdinal("user_id")),
                 Username = reader.GetString(reader.GetOrdinal("username")),
                 Email = reader.GetString(reader.GetOrdinal("email")),
-                Password = reader.GetString(reader.GetOrdinal("password_hash"))
+                Password = storedPasswordHash
             };
         }
 
@@ -78,11 +81,13 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
             using var connection = _db.GetConnection();
             connection.Open();
 
+            string hashedPassword = BCrypt.Net.BCrypt.HashPassword(userPassword);
+
             using var command = new NpgsqlCommand("INSERT INTO users (username, email, password_hash, role) VALUES (@username, @userEmail, @userPassword, 'user')", connection);
 
             command.Parameters.AddWithValue("@username", username);
             command.Parameters.AddWithValue("@userEmail", userEmail);
-            command.Parameters.AddWithValue("@userPassword", userPassword);
+            command.Parameters.AddWithValue("@userPassword", hashedPassword);
 
             var result = command.ExecuteNonQuery();
 
@@ -92,7 +97,7 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
                 {
                     Username = username, 
                     Email = userEmail,
-                    Password = userPassword,
+                    Password = hashedPassword,
                     Role = "user"
                 };
             }
