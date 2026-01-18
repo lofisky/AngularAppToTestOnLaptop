@@ -1,4 +1,5 @@
 ﻿using AngularAppToTestOnLaptop.Server.Business.Interfaces;
+using AngularAppToTestOnLaptop.Server.Domain.Entities;
 using AngularAppToTestOnLaptop.Server.Domain.Interfaces;
 
 namespace AngularAppToTestOnLaptop.Server.Business.Services
@@ -12,9 +13,9 @@ namespace AngularAppToTestOnLaptop.Server.Business.Services
             _userRepository = userRepository;
         }
 
-        public bool Login(string email, string password)
+        public User? Login(string email, string password)
         {
-            return _userRepository.Get(email, password) != null;
+            return _userRepository.Get(email, password);
         }
 
         public bool Register(string username, string userEmail, string userPassword)

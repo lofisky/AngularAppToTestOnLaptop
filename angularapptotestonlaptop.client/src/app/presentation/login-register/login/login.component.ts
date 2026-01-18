@@ -18,16 +18,15 @@ export class LoginComponent {
   }
 
   login() {
-    this.http.post<boolean>('https://localhost:7109/api/auth/login', {
+    this.http.post<{ username: string, email: string }>('https://localhost:7109/api/auth/login', {
       email: this.email,
       password: this.password
-    }).subscribe(success => {
-      if (success) {
-        this.loginMessage = `Login succeeded! Welcome, ${this.email}`;
+    }).subscribe(user => {
+      if (user) {
+        localStorage.setItem('currentUser', JSON.stringify(user));
+
+        this.loginMessage = `Login succeeded! Welcome, ${user.username}`;
         console.log("login success!Q!");
-      }
-      else {
-        alert('Invalid credentials');
       }
     }, error => {
       this.loginMessage = 'errorrrr';

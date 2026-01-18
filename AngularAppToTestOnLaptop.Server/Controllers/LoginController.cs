@@ -16,9 +16,16 @@ namespace AngularAppToTestOnLaptop.Server.Controllers
         }
 
         [HttpPost("login")]
-        public ActionResult<bool> Login(LoginRequestDTO request)
+        public ActionResult<UserDTO> Login(LoginRequestDTO request)
         {
-            return Ok(_authService.Login(request.Email, request.Password));
+            var user = _authService.Login(request.Email, request.Password);
+            if(user == null) return Unauthorized();
+
+            return Ok(new UserDTO
+            {
+                Username = user.Username,
+                Email = user.Email
+            });
         }
     }
 }
