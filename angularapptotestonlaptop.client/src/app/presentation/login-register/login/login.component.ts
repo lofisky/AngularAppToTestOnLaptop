@@ -33,7 +33,7 @@ export class LoginComponent {
         if (user) {
           localStorage.setItem('currentUser', JSON.stringify(user));
 
-          this.loginMessage = `Login succeeded! Welcome, ${user.username}`;
+          this.redirectToHomePage();
           console.log("login success!Q!");
         }
       }, error => {
