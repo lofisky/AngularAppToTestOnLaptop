@@ -8,6 +8,7 @@ import { LoginComponent } from './presentation/login-register/login/login.compon
 import { RegisterComponent } from './presentation/login-register/register/register.component';
 import { FormsModule } from '@angular/forms';
 import { ProfileViewComponent } from './presentation/profile-view/profile-view.component';
+import { HomepageComponent } from './presentation/homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { ProfileViewComponent } from './presentation/profile-view/profile-view.c
     NavbarComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileViewComponent
+    ProfileViewComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

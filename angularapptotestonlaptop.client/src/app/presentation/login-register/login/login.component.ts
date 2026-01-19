@@ -17,6 +17,10 @@ export class LoginComponent {
     this.router.navigate(['/register']);
   }
 
+  redirectToHomePage() {
+    this.router.navigate(['/homepage']);
+  }
+
   login() {
     this.email = this.email.trim(); //trim spaces 
     this.password = this.password.trim();
@@ -29,7 +33,7 @@ export class LoginComponent {
         if (user) {
           localStorage.setItem('currentUser', JSON.stringify(user));
 
-          this.loginMessage = `Login succeeded! Welcome, ${user.username}`;
+          this.redirectToHomePage();
           console.log("login success!Q!");
         }
       }, error => {
