@@ -17,6 +17,10 @@ export class LoginComponent {
     this.router.navigate(['/register']);
   }
 
+  redirectToHomePage() {
+    this.router.navigate(['/homepage']);
+  }
+
   login() {
     this.email = this.email.trim().replace(/\S+/g, ''); //trim spaces and remove inner whitespaces
     this.password = this.password.trim().replace(/\S+/g, '');
