@@ -22,8 +22,8 @@ export class LoginComponent {
   }
 
   login() {
-    this.email = this.email.trim().replace(/\S+/g, ''); //trim spaces and remove inner whitespaces
-    this.password = this.password.trim().replace(/\S+/g, '');
+    this.email = this.email.trim(); //trim spaces 
+    this.password = this.password.trim();
 
     if (this.email && this.password) {
       this.http.post<{ username: string, email: string }>('https://localhost:7109/api/auth/login', {
