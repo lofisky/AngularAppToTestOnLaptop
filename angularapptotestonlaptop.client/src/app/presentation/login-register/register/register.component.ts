@@ -20,9 +20,9 @@ export class RegisterComponent {
   }
 
   register() {
-    this.username = this.username.trim().replace(/\S+/g, ''); //trim spaces and remove inner whitespaces
-    this.userEmail = this.userEmail.trim().replace(/\S+/g, '');
-    this.userPassword = this.userPassword.trim().replace(/\S+/g, '');
+    this.username = this.username.trim(); //trim spaces
+    this.userEmail = this.userEmail.trim();
+    this.userPassword = this.userPassword.trim();
 
     if (this.username && this.userEmail && this.userPassword) {
       this.registerMessage = '';
