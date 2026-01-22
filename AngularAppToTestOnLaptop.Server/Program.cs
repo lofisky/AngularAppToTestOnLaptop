@@ -25,8 +25,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddSingleton<databaseAccess>();
 
+builder.Services.AddHttpClient<IAIFeedbackService, AIFeedbackService>();
+
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAIFeedbackService, AIFeedbackService>();
 
 var app = builder.Build();
 
