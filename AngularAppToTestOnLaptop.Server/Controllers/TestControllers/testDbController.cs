@@ -1,7 +1,7 @@
 using AngularAppToTestOnLaptop.Server.Database;
 using Microsoft.AspNetCore.Mvc;
 
-namespace AngularAppToTestOnLaptop.Server.Controllers
+namespace AngularAppToTestOnLaptop.Server.Controllers.TestControllers
 {
     [ApiController]
     [Route("[controller]")]
