@@ -9,6 +9,7 @@ import { RegisterComponent } from './presentation/login-register/register/regist
 import { FormsModule } from '@angular/forms';
 import { ProfileViewComponent } from './presentation/profile-view/profile-view.component';
 import { HomepageComponent } from './presentation/homepage/homepage.component';
+import { AiChatComponent } from './presentation/ai-chat/ai-chat.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HomepageComponent } from './presentation/homepage/homepage.component';
     LoginComponent,
     RegisterComponent,
     ProfileViewComponent,
-    HomepageComponent
+    HomepageComponent,
+    AiChatComponent
   ],
   imports: [
     BrowserModule,
