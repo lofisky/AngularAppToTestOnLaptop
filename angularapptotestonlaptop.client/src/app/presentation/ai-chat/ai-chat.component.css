@@ -1,0 +1,72 @@
+.aiChatTitle {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+}
+
+.chatboxDiv {
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  max-width: 70%;
+  margin: 50px auto;
+  padding: 50px;
+  height: 70vh;
+}
+
+.messages{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.aiMessages{
+    align-self: flex-start;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 80%;
+}
+
+.userMessages {
+  align-self: flex-end;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  max-width: 80%;
+}
+
+.userInputBar{
+    position: relative;
+    width: 100%;
+}
+
+.userInputBar input{
+    width: 100%;
+    padding: 15px 50px 15px 12px;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    box-sizing: border-box;
+    font-size: 15px;
+}
+
+.userInputBar .sendBtn {
+    position: absolute;
+    right: 10px;
+    top: 45%;
+    transform: translateY(-50%); 
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    padding: 0;
+}
+
+.error-message {
+  color: red;
+  font-size: 15px;
+}
+
