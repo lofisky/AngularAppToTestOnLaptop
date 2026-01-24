@@ -2,16 +2,15 @@
 
 <div class="chatboxDiv">
   <div class="messages">
-    <div class="aiMessages">
-      <p>AI message would be here!</p>
-    </div>
-
-    <div class="userMessages">
-      <p>User message would be here!</p>
+    <div *ngFor="let message of messages"> <!--loop thru msg arr-->
+      <div [ngClass]="{'aiMessages': message.sender === 'ai', 'userMessages': message.sender === 'user'}"> <!--ngClass for dynamic css-->
+        <p>{{ message.content }}</p>
+      </div>
     </div>
   </div>
+
   <div class="userInputBar">
-    <input type="text" name="userInput" placeholder="User Input">
-    <button type="submit" class="sendBtn">➜</button>
+    <input type="text" [(ngModel)]="userMessage" placeholder="Type your message here" (keyup.enter)="sendMessage()">
+    <button type="button" class="sendBtn" (click)="sendMessage()">➜</button>
   </div>
 </div>
