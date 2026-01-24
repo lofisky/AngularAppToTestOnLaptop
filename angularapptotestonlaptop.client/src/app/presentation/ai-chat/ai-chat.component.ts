@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-ai-chat',
@@ -6,5 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./ai-chat.component.css']
 })
 export class AiChatComponent {
+  userMessage: string = '';
+  messages: { content: string, sender: 'user' | 'ai' }[] = []; //arr of objs
 
+  constructor(private http: HttpClient) { }
+
+  sendMessage() {
+    if (!this.userMessage.trim()) return; //if empty message
+
+    this.messages.push({ content: this.userMessage, sender: 'user' });
+
+    this.http.post<any>('http://localhost:5056/api/testAI/ask-ai', this.userMessage).subscribe(
+      (response) => {
+        if (response && response.response) { //empty or null
+          this.messages.push({ content: response.response, sender: 'ai' });
+        }
+        else {
+          this.messages.push({ content: 'No response from AI', sender: 'ai' }); //add obj to obj arr
+        }
+      },
+      (error) => {
+        this.messages.push({ content: 'Error, couldnt get ai response', sender: 'ai' });
+        console.error('AI request failed :c', error);
+      }
+    );
+    this.userMessage = ''; //clear input field after
+  }
 }
