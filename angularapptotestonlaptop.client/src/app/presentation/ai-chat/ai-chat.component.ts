@@ -17,10 +17,10 @@ export class AiChatComponent {
 
     this.messages.push({ content: this.userMessage, sender: 'user' });
 
-    this.http.post<any>('http://localhost:5056/api/testAI/ask-ai', this.userMessage).subscribe(
+    this.http.post<any>('https://localhost:7109/api/askAi/sendQuery', { userMessage: this.userMessage }).subscribe(
       (response) => {
-        if (response && response.response) { //empty or null
-          this.messages.push({ content: response.response, sender: 'ai' });
+        if (response && response.aiResponse) { //empty or null
+          this.messages.push({ content: response.aiResponse, sender: 'ai' });
         }
         else {
           this.messages.push({ content: 'No response from AI', sender: 'ai' }); //add obj to obj arr
