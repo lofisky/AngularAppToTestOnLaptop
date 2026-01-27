@@ -7,6 +7,10 @@
         <p>{{ message.content }}</p>
       </div>
     </div>
+
+    <div *ngIf="isAiTyping" class="aiMessages">
+      <p> AI is typing... </p>
+    </div>
   </div>
 
   <div class="userInputBar">
