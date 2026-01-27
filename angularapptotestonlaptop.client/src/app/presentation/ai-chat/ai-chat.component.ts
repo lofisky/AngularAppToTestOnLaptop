@@ -14,7 +14,7 @@ export class AiChatComponent {
   constructor(private http: HttpClient) { }
 
   sendMessage() {
-    if (!this.userMessage.trim()) return; //if empty message
+    if (this.isAiTyping == true || !this.userMessage.trim()) return; //if empty message
 
     this.messages.push({ content: this.userMessage, sender: 'user' });
 
