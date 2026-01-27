@@ -25,6 +25,6 @@ namespace AngularAppToTestOnLaptop.Server.Controllers
                 return BadRequest(response);
             }
             return Ok(new AskAiResponseDTO { aiResponse = response });
-;        }
+        }
     }
 }
