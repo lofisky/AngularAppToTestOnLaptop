@@ -1,0 +1,29 @@
+.flashcardsTitle {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+}
+
+.flashcardOptionsBar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 20mm;
+  background-color: lightgray;
+  color: white;
+  position: relative;
+}
+
+#DSATopicsTitle {
+  color: black;
+  width: 180px;
+  height: 30px;
+  background-color: white;
+  font-size: 21px;
+}
+
+.flashcardOptionsDropdown{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%)
+}
