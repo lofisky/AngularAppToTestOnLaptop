@@ -1,0 +1,63 @@
+.flashcardsTitle {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+}
+
+.flashcard {
+  background-color: lightgray;
+  width: 800px;
+  height: 800px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.flipButton {
+  background-color: white;
+  border: 2px solid lightgray;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: deepskyblue;
+  position: absolute; 
+  bottom: 80px;
+  z-index: 10; 
+}
+
+  .flipButton:hover {
+    background-color: #cacaca;
+    border-color: darkgray;
+  }
+
+.navigation-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  position: absolute;
+  top: 80%;
+  z-index: 1; 
+}
+
+  .navigation-buttons button {
+    background: none;
+    border: none;
+    font-size: 80px;
+    cursor: pointer;
+    padding: 10px;
+  }
+
+  .navigation-buttons .flipped-arrow {
+    transform: scaleX(-1); 
+  }
+
+
+.flashcard-text{
+    font-size: 40px;
+    padding: 100px;
+}

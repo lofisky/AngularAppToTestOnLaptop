@@ -1,8 +1,9 @@
 <div class="optionsBar">
   <div id="DSATopicsTitle">DSA Topics</div>
   <div class="optionsDropdown">
-    <select>
+    <select [(ngModel)]="selectedTopic" (change)="onTopicChange($event)">
       <option value="Two pointers">Two Pointers</option>
+      <option value="Hashmap">Hashmap</option>
     </select>
   </div>
 </div>

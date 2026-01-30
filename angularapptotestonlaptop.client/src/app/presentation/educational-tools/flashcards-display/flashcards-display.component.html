@@ -1,14 +1,17 @@
-<h2 class="flashcardsTitle">{{ flashcardSet?.title }}</h2>
+<h2 class="flashcardsTitle">{{ flashcards.length > 0 ? flashcards[0]?.flashcardSetTitle : 'Issue loading title' }}</h2>
 
 <div *ngIf="flashcards.length > 0" class="flashcard">
   <p class="flashcard-text">
     {{ isFlipped ? flashcards[currentIndex]?.backText : flashcards[currentIndex]?.frontText }}
   </p>
-  <button (click)="flipCard()">{{ isFlipped ? 'Show Front' : 'Flip' }}</button>
+
+  <button class="flipButton" (click)="flipCard()">
+    {{ isFlipped ? 'Show Front' : 'Flip' }}
+  </button>
 
   <div class="navigation-buttons">
-    <button (click)="prevCard()" [disabled]="currentIndex === 0">Prev</button>
-    <button (click)="nextCard()" [disabled]="currentIndex === flashcards.length - 1">Next</button>
+    <button (click)="prevCard()" [disabled]="currentIndex === 0" class="flipped-arrow">➜</button>
+    <button (click)="nextCard()" [disabled]="currentIndex === flashcards.length - 1">➜</button>
   </div>
 </div>
 

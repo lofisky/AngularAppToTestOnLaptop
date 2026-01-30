@@ -6,5 +6,6 @@
         public string FrontText { get; set; }
         public string BackText { get; set; }
         public int FlashcardSetId { get; set; }
+        public string FlashcardSetTitle { get; set; }
     }
 }
