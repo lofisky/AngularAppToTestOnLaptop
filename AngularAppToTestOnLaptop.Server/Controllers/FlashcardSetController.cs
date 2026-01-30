@@ -19,9 +19,26 @@ namespace AngularAppToTestOnLaptop.Server.Controllers
         {
             Console.WriteLine($"Received topic: {topic}"); //logging topic received 
             List<FlashcardSet> flashcardSets = _flashcardSetService.GetFlashcardSetsByTopic(topic);
-            
+
             if (flashcardSets == null || flashcardSets.Count == 0) return NotFound(new { message = "No flashcard sets found" });
-            return Ok(flashcardSets);
+
+            //ensure flashcardsetid is included
+            return Ok(flashcardSets.Select(flashcardSet => new {
+                flashcardSetId = flashcardSet.FlashcardSetId,  
+                flashcardSet.Title,
+                flashcardSet.Description,
+                flashcardSet.Topic,
+                flashcardSet.IsPreBuilt
+            }));
+        }
+
+        [HttpGet("getFlashcardsForSet")]
+        public async Task<ActionResult> GetFlashcardsForSet(int id)
+        {
+            var flashcard = _flashcardSetService.GetFlashcardsForSet(id);
+
+            if (flashcard == null || flashcard.Count == 0) return NotFound(new { message = "No flashcards found" });
+            return Ok(flashcard);
         }
     }
 }

@@ -19,8 +19,15 @@ export class FlashcardsComponent implements OnInit {
   }
 
   redirectToFlashcardsDisplayPage(flashcardSet: any) {
-    this.router.navigate(['/flashcards-display', flashcardSet.flashcardSetId]);
+    console.log('Navigating to flashcards display with ID:', flashcardSet.flashcardSetId);
+
+    if (flashcardSet.flashcardSetId && flashcardSet.flashcardSetId > 0) {
+      this.router.navigate(['/flashcards-display', flashcardSet.flashcardSetId]);
+    } else {
+      console.error('Invalid flashcardSetId:', flashcardSet);
+    }
   }
+
 
   onTopicChange(event: any): void {
     this.selectedTopic = event.target.value;

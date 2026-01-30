@@ -15,8 +15,8 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'ai-chat', component: AiChatComponent },
   { path: 'flashcards', component: FlashcardsComponent },
-  { path: 'flashcards-display', component: FlashcardsDisplayComponent },
-  { path: '**', redirectTo: '' } //any other unknown route/path 
+  { path: 'flashcards-display/:id', component: FlashcardsDisplayComponent }, //dynamic routing for flashcards
+  //{ path: '**', redirectTo: '' } //any other unknown route/path 
 ];
 
 @NgModule({
