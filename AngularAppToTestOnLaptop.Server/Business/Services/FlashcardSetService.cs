@@ -16,5 +16,10 @@ namespace AngularAppToTestOnLaptop.Server.Business.Services
         {
             return _flashcardSetRepository.GetFlashcardSetsByTopic(topic);
         }
+
+        public List<Flashcard> GetFlashcardsForSet(int id)
+        {
+            return _flashcardSetRepository.GetFlashcardsForSet(id);
+        }
     }
 }
