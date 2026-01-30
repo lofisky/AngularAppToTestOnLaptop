@@ -22,14 +22,7 @@ namespace AngularAppToTestOnLaptop.Server.Controllers
 
             if (flashcardSets == null || flashcardSets.Count == 0) return NotFound(new { message = "No flashcard sets found" });
 
-            //ensure flashcardsetid is included
-            return Ok(flashcardSets.Select(flashcardSet => new {
-                flashcardSetId = flashcardSet.FlashcardSetId,  
-                flashcardSet.Title,
-                flashcardSet.Description,
-                flashcardSet.Topic,
-                flashcardSet.IsPreBuilt
-            }));
+            return Ok(flashcardSets);
         }
 
         [HttpGet("getFlashcardsForSet")]
