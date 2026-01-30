@@ -17,6 +17,7 @@ namespace AngularAppToTestOnLaptop.Server.Controllers
         [HttpGet("getFlashcardSets")]
         public async Task<ActionResult> GetFlashcardSets(string topic)
         {
+            Console.WriteLine($"Received topic: {topic}"); //logging topic received 
             List<FlashcardSet> flashcardSets = _flashcardSetService.GetFlashcardSetsByTopic(topic);
             
             if (flashcardSets == null || flashcardSets.Count == 0) return NotFound(new { message = "No flashcard sets found" });
