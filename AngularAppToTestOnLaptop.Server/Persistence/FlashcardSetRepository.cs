@@ -15,10 +15,11 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
         }
 
         public List<FlashcardSet> GetFlashcardSetsByTopic(string topic) {
+            Console.WriteLine($"Querying for topic: {topic}"); //logging topic for query
             using var connection = _dbAccess.GetConnection();
             connection.Open();
 
-            using var command = new NpgsqlCommand("SELECT title, description, topic, is_pre_built FROM flashcard_set WHERE topic = @topic", connection);
+            using var command = new NpgsqlCommand("SELECT title, description, topic, is_pre_built FROM flashcard_set WHERE LOWER(topic) = LOWER(@topic)", connection);
             command.Parameters.AddWithValue("@topic", topic);
 
             using var reader = command.ExecuteReader();
@@ -34,6 +35,8 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
                     IsPreBuilt = reader.GetBoolean(reader.GetOrdinal("is_pre_built")),
                 });
             }
+
+            Console.WriteLine($"Found {flashcardSets.Count} flashcard sets for topic: {topic}"); //loggin num of flashcards found
             return flashcardSets;
         }
     }
