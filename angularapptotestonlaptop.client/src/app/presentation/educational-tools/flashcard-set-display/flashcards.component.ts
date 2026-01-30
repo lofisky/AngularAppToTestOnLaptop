@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-flashcards',
@@ -11,10 +12,14 @@ export class FlashcardsComponent implements OnInit {
   selectedTopic: string = 'Two pointers'; //default topic
   flashcardMessage: string = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
     this.fetchFlashcards(this.selectedTopic);
+  }
+
+  redirectToFlashcardsDisplayPage(flashcardSet: any) {
+    this.router.navigate(['/flashcards-display', flashcardSet.flashcardSetId]);
   }
 
   onTopicChange(event: any): void {
