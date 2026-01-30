@@ -31,6 +31,10 @@ builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.AddScoped<IAIFeedbackService, AIFeedbackService>();
 
+
+builder.Services.AddScoped<IFlashcardSetRepository, FlashcardSetRepository>();
+builder.Services.AddScoped<IFlashcardSetService, FlashcardSetService>();
+
 var app = builder.Build();
 
 app.UseCors("AllowAngularApp");

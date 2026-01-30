@@ -1,14 +1,14 @@
 ﻿using AngularAppToTestOnLaptop.Server.Business.Interfaces;
 using AngularAppToTestOnLaptop.Server.Domain.Entities;
-using AngularAppToTestOnLaptop.Server.Persistence;
+using AngularAppToTestOnLaptop.Server.Domain.Interfaces;
 
 namespace AngularAppToTestOnLaptop.Server.Business.Services
 {
     public class FlashcardSetService : IFlashcardSetService
     {
-        private readonly FlashcardSetRepository _flashcardSetRepository;
+        private readonly IFlashcardSetRepository _flashcardSetRepository;
 
-        public FlashcardSetService(FlashcardSetRepository flashcardSetRepository) {
+        public FlashcardSetService(IFlashcardSetRepository flashcardSetRepository) {
             _flashcardSetRepository = flashcardSetRepository;
         }
 
