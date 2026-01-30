@@ -1,0 +1,16 @@
+<h2 class="flashcardsTitle">Flashcards</h2>
+
+<app-tool-options-menu (topicChange)="onTopicChange($event)"></app-tool-options-menu>
+
+<div *ngIf="flashcardSets && flashcardSets.length > 0" class="flashcardSetsContainer">
+  <div *ngFor="let flashcardSet of flashcardSets" class="flashcardBox">
+    <p class="flashcardTitle">{{ flashcardSet.title }}</p>
+    <p class="flashcardDescription">{{ flashcardSet.description }}</p>
+    <button type="button" (click)="redirectToFlashcardsDisplayPage(flashcardSet)">Start</button>
+  </div>
+</div>
+
+
+<div *ngIf="flashcardSets.length === 0">
+  <p>{{ flashcardMessage }}</p>
+</div>

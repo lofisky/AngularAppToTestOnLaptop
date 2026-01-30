@@ -5,7 +5,8 @@ import { RegisterComponent } from './presentation/login-register/register/regist
 import { ProfileViewComponent } from './presentation/profile-view/profile-view.component';
 import { HomepageComponent } from './presentation/homepage/homepage.component';
 import { AiChatComponent } from './presentation/ai-chat/ai-chat.component';
-import { FlashcardsComponent } from './presentation/educational-tools/flashcards/flashcards.component';
+import { FlashcardsComponent } from './presentation/educational-tools/flashcard-set-display/flashcards.component';
+import { FlashcardsDisplayComponent } from './presentation/educational-tools/flashcards-display/flashcards-display.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, //make loginpage first appear upon project loading
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'homepage', component: HomepageComponent },
   { path: 'ai-chat', component: AiChatComponent },
   { path: 'flashcards', component: FlashcardsComponent },
+  { path: 'flashcards-display', component: FlashcardsDisplayComponent },
   { path: '**', redirectTo: '' } //any other unknown route/path 
 ];
 

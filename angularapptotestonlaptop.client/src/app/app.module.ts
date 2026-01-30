@@ -10,8 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { ProfileViewComponent } from './presentation/profile-view/profile-view.component';
 import { HomepageComponent } from './presentation/homepage/homepage.component';
 import { AiChatComponent } from './presentation/ai-chat/ai-chat.component';
-import { FlashcardsComponent } from './presentation/educational-tools/flashcards/flashcards.component';
+import { FlashcardsComponent } from './presentation/educational-tools/flashcard-set-display/flashcards.component';
 import { ToolOptionsMenuComponent } from './presentation/tool-options-menu/tool-options-menu.component';
+import { FlashcardsDisplayComponent } from './presentation/educational-tools/flashcards-display/flashcards-display.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ToolOptionsMenuComponent } from './presentation/tool-options-menu/tool-
     HomepageComponent,
     AiChatComponent,
     FlashcardsComponent,
-    ToolOptionsMenuComponent
+    ToolOptionsMenuComponent,
+    FlashcardsDisplayComponent
   ],
   imports: [
     BrowserModule,
