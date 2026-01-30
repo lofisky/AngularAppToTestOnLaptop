@@ -46,7 +46,7 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
             using var connection = _dbAccess.GetConnection();
             connection.Open();
 
-            using var command = new NpgsqlCommand("SELECT front_text, back_text, flashcard_set_id FROM flashcard WHERE flashcard_set_id = @flashcardSetId", connection);
+            using var command = new NpgsqlCommand("SELECT flashcard.front_text, flashcard.back_text, flashcard.flashcard_set_id, flashcard_set.title FROM flashcard JOIN flashcard_set ON flashcard.flashcard_set_id = flashcard_set.flashcard_set_id WHERE flashcard.flashcard_set_id = @flashcardSetId", connection);
             command.Parameters.AddWithValue("@flashcardSetId", flashcardSetId);
 
             using var reader = command.ExecuteReader();
@@ -60,6 +60,7 @@ namespace AngularAppToTestOnLaptop.Server.Persistence
                     FrontText = reader.GetString(reader.GetOrdinal("front_text")),
                     BackText = reader.GetString(reader.GetOrdinal("back_text")),
                     FlashcardSetId = reader.GetInt32(reader.GetOrdinal("flashcard_set_id")),
+                    FlashcardSetTitle = reader.GetString(reader.GetOrdinal("title"))
                 });
             }
 
