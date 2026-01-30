@@ -28,10 +28,14 @@ export class FlashcardsComponent implements OnInit {
     }
   }
 
-
   onTopicChange(event: any): void {
     this.selectedTopic = event.target.value;
     this.fetchFlashcards(this.selectedTopic);
+  }
+
+  onTopicChangedFromMenu(topic: string): void {
+    this.selectedTopic = topic;
+    this.fetchFlashcards(topic);
   }
 
   fetchFlashcards(topic: string): void {
