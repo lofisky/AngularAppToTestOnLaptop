@@ -18,8 +18,8 @@ const routes: Routes = [
   { path: 'ai-chat', component: AiChatComponent },
   { path: 'flashcards', component: FlashcardsComponent },
   { path: 'flashcards-display/:id', component: FlashcardsDisplayComponent }, //dynamic routing for flashcards
-  { path: 'quizzes', component: QuizComponent },
-  { path: 'quizzes-display/:id', component: QuizOptionsComponent }, //dynamic routing for quizzes
+  { path: 'quizzes', component: QuizOptionsComponent },
+  { path: 'quizzes-display/:id', component: QuizComponent }, //dynamic routing for quizzes
   //{ path: '**', redirectTo: '' } //any other unknown route/path 
 ];
 

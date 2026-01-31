@@ -35,6 +35,9 @@ builder.Services.AddScoped<IAIFeedbackService, AIFeedbackService>();
 builder.Services.AddScoped<IFlashcardSetRepository, FlashcardSetRepository>();
 builder.Services.AddScoped<IFlashcardSetService, FlashcardSetService>();
 
+builder.Services.AddScoped<IQuizRepository, QuizRepository>();
+builder.Services.AddScoped<IQuizService, QuizService>();
+
 var app = builder.Build();
 
 app.UseCors("AllowAngularApp");
