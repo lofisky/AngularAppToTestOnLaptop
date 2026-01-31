@@ -59,9 +59,9 @@ button:hover {
 
 .quizDescription {
   font-size: 16px;
-  flex-grow: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: 52px;
 }
 
