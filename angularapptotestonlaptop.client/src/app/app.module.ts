@@ -13,6 +13,8 @@ import { AiChatComponent } from './presentation/ai-chat/ai-chat.component';
 import { FlashcardsComponent } from './presentation/educational-tools/flashcard-set-display/flashcards.component';
 import { ToolOptionsMenuComponent } from './presentation/tool-options-menu/tool-options-menu.component';
 import { FlashcardsDisplayComponent } from './presentation/educational-tools/flashcards-display/flashcards-display.component';
+import { QuizOptionsComponent } from './presentation/educational-tools/quiz/quiz-options/quiz-options.component';
+import { QuizComponent } from './presentation/educational-tools/quiz/quiz/quiz.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FlashcardsDisplayComponent } from './presentation/educational-tools/fla
     AiChatComponent,
     FlashcardsComponent,
     ToolOptionsMenuComponent,
-    FlashcardsDisplayComponent
+    FlashcardsDisplayComponent,
+    QuizOptionsComponent,
+    QuizComponent
   ],
   imports: [
     BrowserModule,

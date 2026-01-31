@@ -1,0 +1,16 @@
+<h2 class="quizzesTitle">Quizzes</h2>
+
+<app-tool-options-menu (topicChanged)="onTopicChangedFromMenu($event)"></app-tool-options-menu>
+
+<div *ngIf="quizzes && quizzes.length > 0" class="quizzesContainer">
+  <div *ngFor="let quiz of quizzes" class="quizBox">
+    <p class="quizTitle">{{ quiz.title }}</p>
+    <p class="quizDescription">{{ quiz.description }}</p>
+    <button type="button" (click)="redirectToQuizzesDisplayPage(quiz)">Start</button>
+  </div>
+</div>
+
+
+<div *ngIf="quizzes.length === 0">
+  <p>{{ quizMessage }}</p>
+</div>

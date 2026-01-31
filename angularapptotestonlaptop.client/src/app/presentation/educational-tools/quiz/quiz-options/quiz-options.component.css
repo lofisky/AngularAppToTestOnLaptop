@@ -1,0 +1,76 @@
+.quizzesTitle {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+}
+
+.quizOptionsBar {
+  display: flex;
+  align-items: center;
+  height: 60px;
+  padding: 0 20mm;
+  background-color: lightgray;
+  color: white;
+  position: relative;
+}
+
+#DSATopicsTitle {
+  color: black;
+  width: 180px;
+  height: 30px;
+  background-color: white;
+  font-size: 21px;
+}
+
+.quizOptionsDropdown {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
+
+.quizBox {
+  background-color: lightgray;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 20px;
+  margin: 30px;
+}
+
+button {
+  background-color: white;
+  border: 2px solid lightgray;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: deepskyblue;
+}
+
+input[type="submit"]:hover {
+  background-color: #cacaca;
+  border-color: darkgray;
+}
+
+button:hover {
+  background-color: #cacaca;
+  border-color: darkgray;
+}
+
+.quizDescription {
+  font-size: 16px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 52px;
+}
+
+.quizTitle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.quizzesContainer {
+  display: flex;
+  flex-wrap: wrap;
+}

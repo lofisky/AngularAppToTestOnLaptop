@@ -7,6 +7,8 @@ import { HomepageComponent } from './presentation/homepage/homepage.component';
 import { AiChatComponent } from './presentation/ai-chat/ai-chat.component';
 import { FlashcardsComponent } from './presentation/educational-tools/flashcard-set-display/flashcards.component';
 import { FlashcardsDisplayComponent } from './presentation/educational-tools/flashcards-display/flashcards-display.component';
+import { QuizComponent } from './presentation/educational-tools/quiz/quiz/quiz.component';
+import { QuizOptionsComponent } from './presentation/educational-tools/quiz/quiz-options/quiz-options.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, //make loginpage first appear upon project loading
@@ -16,6 +18,8 @@ const routes: Routes = [
   { path: 'ai-chat', component: AiChatComponent },
   { path: 'flashcards', component: FlashcardsComponent },
   { path: 'flashcards-display/:id', component: FlashcardsDisplayComponent }, //dynamic routing for flashcards
+  { path: 'quizzes', component: QuizComponent },
+  { path: 'quizzes-display/:id', component: QuizOptionsComponent }, //dynamic routing for quizzes
   //{ path: '**', redirectTo: '' } //any other unknown route/path 
 ];
 
