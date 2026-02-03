@@ -1,1 +1,31 @@
-<p>quiz works!</p>
+<h2 class="quizzesTitle">{{ quizQuestions.length > 0 ? quizQuestions[0]?.quizTitle : 'Issue loading title' }}</h2>
+
+<div *ngIf="quizQuestions.length > 0" class="quizQuestion">
+  <p class="quizQuestion-text">
+    {{ quizQuestions[currentIndex]?.questionText }}
+  </p>
+
+  <ul class="quizQuestionList">
+    <li *ngFor="let option of quizQuestions[currentIndex]?.options.split('/')"
+        (click)="selectOption(option)"
+        [class.selected]="selectedOptions[currentIndex] === option">
+      <!--use selectedOptions for selected question highlighting -->
+      {{ option }}
+    </li>
+  </ul>
+
+  <div *ngIf="quizMessage" class="quizMessage">
+    <p>{{ quizMessage }}</p>
+  </div>
+
+  <button class="submitButton" (click)="submitQuiz()">Submit</button>
+
+  <div class="navigation-buttons">
+    <button (click)="prevQuestion()" [disabled]="currentIndex === 0" class="flipped-arrow">➜</button>
+    <button (click)="nextQuestion()" [disabled]="currentIndex === quizQuestions.length - 1">➜</button>
+  </div>
+</div>
+
+<div *ngIf="quizQuestions.length === 0">
+  <p>No quiz questions available for this quiz :c</p>
+</div>

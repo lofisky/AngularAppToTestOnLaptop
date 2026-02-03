@@ -9,6 +9,7 @@ import { FlashcardsComponent } from './presentation/educational-tools/flashcard-
 import { FlashcardsDisplayComponent } from './presentation/educational-tools/flashcards-display/flashcards-display.component';
 import { QuizComponent } from './presentation/educational-tools/quiz/quiz/quiz.component';
 import { QuizOptionsComponent } from './presentation/educational-tools/quiz/quiz-options/quiz-options.component';
+import { QuizResultsComponent } from './presentation/educational-tools/quiz/quiz-results/quiz-results.component';
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, //make loginpage first appear upon project loading
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: 'flashcards-display/:id', component: FlashcardsDisplayComponent }, //dynamic routing for flashcards
   { path: 'quizzes', component: QuizOptionsComponent },
   { path: 'quizzes-display/:id', component: QuizComponent }, //dynamic routing for quizzes
+  { path: 'quiz-results', component: QuizResultsComponent },
   //{ path: '**', redirectTo: '' } //any other unknown route/path 
 ];
 

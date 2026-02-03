@@ -1,0 +1,11 @@
+<h2 class="quizzesTitle">{{ quizTitle || 'Issue loading quiz title' }}</h2>
+
+<div class="quizResultsDiv">
+  <div class="quizCompleteDiv">
+    <h3>Quiz Complete</h3>
+  </div>
+  <div class="scoreDiv">
+    <p>Score: {{ score }} / {{ totalQuestions }}</p>
+  </div>
+  <div class="backToQuizzesButton" (click)="redirectToQuizOptionsPage()">Back to quizzes</div>
+</div>
