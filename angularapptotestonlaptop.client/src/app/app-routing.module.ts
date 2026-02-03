@@ -10,7 +10,8 @@ import { FlashcardsDisplayComponent } from './presentation/educational-tools/fla
 import { QuizComponent } from './presentation/educational-tools/quiz/quiz/quiz.component';
 import { QuizOptionsComponent } from './presentation/educational-tools/quiz/quiz-options/quiz-options.component';
 import { QuizResultsComponent } from './presentation/educational-tools/quiz/quiz-results/quiz-results.component';
-import { DiagrammingComponent } from './presentation/educational-tools/diagramming/diagramming.component'; 
+import { DiagrammingComponent } from './presentation/educational-tools/diagramming/diagramming.component';
+import { CreateFlashcardSetComponent } from './presentation/educational-tool-creation/create-flashcard-set/create-flashcard-set.component'; 
 
 const routes: Routes = [
   { path: '', component: LoginComponent }, //make loginpage first appear upon project loading
@@ -24,7 +25,8 @@ const routes: Routes = [
   { path: 'quizzes-display/:id', component: QuizComponent }, //dynamic routing for quizzes
   { path: 'quiz-results', component: QuizResultsComponent },
   { path: 'diagramming', component: DiagrammingComponent },
-  //{ path: '**', redirectTo: '' } //any other unknown route/path 
+  { path: 'create-flashcard-set', component: CreateFlashcardSetComponent },
+  { path: '**', redirectTo: '' } //any other unknown route/path 
 ];
 
 @NgModule({

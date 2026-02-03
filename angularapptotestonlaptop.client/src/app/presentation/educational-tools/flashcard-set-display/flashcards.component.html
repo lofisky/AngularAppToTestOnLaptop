@@ -4,9 +4,13 @@
 
 <div *ngIf="flashcardSets && flashcardSets.length > 0" class="flashcardSetsContainer">
   <div *ngFor="let flashcardSet of flashcardSets" class="flashcardBox">
+    <div class="editAndDeleteButtonDiv">
+      <button>Edit</button>
+      <button>Delete</button>
+    </div>
     <p class="flashcardTitle">{{ flashcardSet.title }}</p>
     <p class="flashcardDescription">{{ flashcardSet.description }}</p>
-    <button type="button" (click)="redirectToFlashcardsDisplayPage(flashcardSet)">Start</button>
+    <button type="button" (click)="navigateToFlashcardsDisplayPage(flashcardSet)">Start</button>
   </div>
 </div>
 
@@ -14,3 +18,5 @@
 <div *ngIf="flashcardSets.length === 0">
   <p>{{ flashcardMessage }}</p>
 </div>
+
+<button class="createNewFlashcardSetButton" (click)="navigateToFlashcardSetCreationPage()">Create New</button>

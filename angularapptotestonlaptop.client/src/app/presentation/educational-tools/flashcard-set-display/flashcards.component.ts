@@ -18,7 +18,7 @@ export class FlashcardsComponent implements OnInit {
     this.fetchFlashcards(this.selectedTopic);
   }
 
-  redirectToFlashcardsDisplayPage(flashcardSet: any) {
+  navigateToFlashcardsDisplayPage(flashcardSet: any) {
     console.log('Navigating to flashcards display with ID:', flashcardSet.flashcardSetId);
 
     if (flashcardSet.flashcardSetId && flashcardSet.flashcardSetId > 0) {
@@ -26,6 +26,10 @@ export class FlashcardsComponent implements OnInit {
     } else {
       console.error('Invalid flashcardSetId:', flashcardSet);
     }
+  }
+
+  navigateToFlashcardSetCreationPage() {
+    this.router.navigate(['/create-flashcard-set']);
   }
 
   onTopicChange(event: any): void {

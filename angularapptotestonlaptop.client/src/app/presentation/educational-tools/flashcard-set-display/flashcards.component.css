@@ -74,3 +74,7 @@ button:hover {
   display: flex;
   flex-wrap: wrap;
 }
+
+.editAndDeleteButtonDiv{
+    margin-left: 150px;
+}
