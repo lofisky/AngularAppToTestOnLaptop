@@ -1,0 +1,80 @@
+.diagrammingTitle {
+  font-size: 30px;
+  position: relative;
+  top: 10px;
+}
+
+.diagrammingBoxWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+.outerDiagrammingBox {
+  width: 75vw;
+  height: 70vh;
+  background-color: lightgray;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.innerDiagrammingBox {
+  width: 70vw;
+  height: 65vh;
+  background-color: white;
+}
+
+.penOptionsDiv {
+  background-color: lightgray;
+  width: 200px;
+  height: 899px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+.colorOption {
+  width: 30px;
+  height: 30px;
+  margin: 8px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+canvas {
+  width: 80vw;
+  height: 70vh;
+}
+
+.squareShape {
+  width: 40px;
+  height: 40px;
+  background-color: transparent; 
+  border: 2px solid #000; 
+  margin: 8px;
+  cursor: pointer;
+}
+
+button {
+  background-color: white;
+  border: 2px solid lightgray;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: deepskyblue;
+}
+
+button:hover {
+  background-color: #cacaca;
+  border-color: darkgray;
+}
+
+.clearCanvasButton {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px; 
+}

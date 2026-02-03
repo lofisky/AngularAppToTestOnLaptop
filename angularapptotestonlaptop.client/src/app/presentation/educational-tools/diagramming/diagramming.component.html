@@ -1,0 +1,16 @@
+<h2 class="diagrammingTitle">Diagramming Tool</h2>
+
+<div class="diagrammingBoxWrapper">
+  <div class="outerDiagrammingBox">
+    <canvas #canvas class="innerDiagrammingBox"></canvas>
+  </div>
+  <div class="penOptionsDiv">
+    <p>Colors:</p>
+    <div class="colorOption" *ngFor="let color of colors" [style.background]="color" (click)="changeColor(color)"></div>
+
+    <p>(Coming soon) Shapes:</p>
+    <div class="squareShape"></div>
+  </div>
+</div>
+
+<button class="clearCanvasButton" (click)="clearCanvas()">Clear</button>
