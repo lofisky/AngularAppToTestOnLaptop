@@ -24,15 +24,15 @@
   padding: 5px 15px;
   cursor: pointer;
   color: deepskyblue;
-  position: absolute; 
+  position: absolute;
   bottom: 80px;
-  z-index: 10; 
+  z-index: 10;
 }
 
-  .flipButton:hover {
-    background-color: #cacaca;
-    border-color: darkgray;
-  }
+.flipButton:hover {
+  background-color: #cacaca;
+  border-color: darkgray;
+}
 
 .navigation-buttons {
   display: flex;
@@ -41,23 +41,23 @@
   width: 90%;
   position: absolute;
   top: 80%;
-  z-index: 1; 
+  z-index: 1;
 }
 
-  .navigation-buttons button {
-    background: none;
-    border: none;
-    font-size: 80px;
-    cursor: pointer;
-    padding: 10px;
-  }
+.navigation-buttons button {
+  background: none;
+  border: none;
+  font-size: 80px;
+  cursor: pointer;
+  padding: 10px;
+ }
 
-  .navigation-buttons .flipped-arrow {
-    transform: scaleX(-1); 
-  }
+.navigation-buttons .flipped-arrow {
+    transform: scaleX(-1);
+}
 
 
-.flashcard-text{
-    font-size: 40px;
-    padding: 100px;
+.flashcard-text {
+  font-size: 40px;
+  padding: 100px;
 }

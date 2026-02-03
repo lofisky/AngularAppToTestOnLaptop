@@ -16,6 +16,7 @@ import { FlashcardsDisplayComponent } from './presentation/educational-tools/fla
 import { QuizOptionsComponent } from './presentation/educational-tools/quiz/quiz-options/quiz-options.component';
 import { QuizComponent } from './presentation/educational-tools/quiz/quiz/quiz.component';
 import { QuizResultsComponent } from './presentation/educational-tools/quiz/quiz-results/quiz-results.component';
+import { DiagrammingComponent } from './presentation/educational-tools/diagramming/diagramming.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { QuizResultsComponent } from './presentation/educational-tools/quiz/quiz
     FlashcardsDisplayComponent,
     QuizOptionsComponent,
     QuizComponent,
-    QuizResultsComponent
+    QuizResultsComponent,
+    DiagrammingComponent
   ],
   imports: [
     BrowserModule,
