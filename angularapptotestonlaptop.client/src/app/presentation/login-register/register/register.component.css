@@ -68,6 +68,12 @@ button:hover {
   border-color: darkgray;
 }
 
+button[type="submit"]:disabled {
+  background-color: white; 
+  cursor: not-allowed;
+  opacity: 0.5; 
+}
+
 .error-message {
   color: red;
   font-size: 15px;
