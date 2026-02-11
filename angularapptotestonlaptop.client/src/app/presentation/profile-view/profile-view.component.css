@@ -1,16 +1,35 @@
 .profileViewTitle {
-  font-size: 30px;
+  font-size: 32px;
   position: relative;
   top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #00bfff;
 }
 
+
 .profileViewDiv {
-  background-color: lightgray;
+  background-color: #e0f7fa;
   display: flex;
   flex-direction: column;
-  max-width: 70%;
+  width: 70%;
+  max-width: 900px;
+  min-height: 60vh;
   margin: 50px auto;
   padding: 50px;
-  height: 70vh;
-  align-items: start;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  align-items: flex-start;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+  .profileViewDiv h3 {
+    font-size: 26px;
+    color: #00bfff;
+    margin-top: 20px;
+  }
+
+  .profileViewDiv p {
+    font-size: 18px;
+    color: #333;
+    margin-top: 5px;
+  }

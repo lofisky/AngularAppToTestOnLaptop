@@ -34,6 +34,10 @@ export class QuizComponent {
       });
   }
 
+  redirectToQuizOptionsPage() {
+    this.router.navigate(['/quizzes']);
+  }
+
   selectOption(option: string): void {
     this.selectedOptions[this.currentIndex] = option; //selected and answered at this question is this
     this.answeredQuestions[this.currentIndex] = true;

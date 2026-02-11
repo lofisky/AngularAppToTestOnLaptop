@@ -26,6 +26,8 @@
   </div>
 </div>
 
-<div *ngIf="quizQuestions.length === 0">
+<div class="quitButton" (click)="redirectToQuizOptionsPage()">Quit</div>
+
+<div *ngIf="quizQuestions.length === 0" class="quizMissingMessage">
   <p>No quiz questions available for this quiz :c</p>
 </div>

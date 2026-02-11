@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
@@ -13,7 +13,7 @@ export class FlashcardsDisplayComponent {
   currentIndex: number = 0;
   isFlipped: boolean = false;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) { }
+  constructor(private route: ActivatedRoute, private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
     const flashcardSetId = this.route.snapshot.paramMap.get('id'); //get flashcardset id from this url
@@ -22,9 +22,14 @@ export class FlashcardsDisplayComponent {
       .subscribe(flashcards => {
         this.flashcards = flashcards;
         if (flashcards.length > 0) {
-          this.flashcardSet = flashcards[0].flashcardSet; 
+          this.flashcardSet = flashcards[0].flashcardSet;
         }
       });
+  }
+
+
+  redirectToFlashcardOptionsPage() {
+    this.router.navigate(['/flashcards']);
   }
 
   flipCard(): void {

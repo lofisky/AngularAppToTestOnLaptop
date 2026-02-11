@@ -13,11 +13,11 @@
     </div>
 
     <div class="logInAndSignUpButtonDiv">
-      <button type="submit">Log In</button>
+      <button type="submit" [disabled]="!emailField.valid || !passwordField.valid">Log In</button>
       <button type="button" (click)="redirectToRegisterPage()">Sign Up</button>
     </div>
   </form>
 </div>
 
 
-<p *ngIf="loginMessage"> {{ loginMessage }} </p>
+<p class="loginMessage" *ngIf="loginMessage"> {{ loginMessage }} </p>
