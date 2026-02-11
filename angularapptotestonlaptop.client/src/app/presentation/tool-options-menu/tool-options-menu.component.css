@@ -1,23 +1,67 @@
 .optionsBar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 60px;
-  padding: 0 20mm;
-  background-color: lightgray;
-  color: white;
-  position: relative;
+  padding: 0 20px;
+  background-color: #e0f7fa;
+  color: black;
 }
 
 #DSATopicsTitle {
   color: black;
-  width: 180px;
-  height: 30px;
+  font-size: 25px;
   background-color: white;
-  font-size: 21px;
+  padding: 5px 10px;
+  border-radius: 5px;
 }
 
 .optionsDropdown {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
+}
+
+.optionsLinks {
+  list-style: none;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+
+.optionsLinks a {
+  color: #00bfff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 10px 15px;
+  text-decoration: none;
+}
+
+.optionsLinks a:hover {
+  text-decoration: underline;
+  color: #00bfff;
+}
+
+.optionsLinks li {
+  padding: 0 20px;
+  border-right: 1px solid black;
+}
+
+.optionsLinks li:last-child {
+  border-right: none;
+}
+
+@media (max-width: 768px) {
+  .optionsBar {
+    flex-direction: column;
+    padding: 10px;
+  }
+
+  .optionsLinks {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .optionsLinks li {
+    padding: 10px 0;
+  }
 }

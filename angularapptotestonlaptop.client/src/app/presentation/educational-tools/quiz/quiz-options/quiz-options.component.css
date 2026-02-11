@@ -1,35 +1,28 @@
 .quizzesTitle {
-  font-size: 30px;
+  font-size: 32px;
   position: relative;
   top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #00bfff;
 }
 
 .quizOptionsBar {
   display: flex;
   align-items: center;
   height: 60px;
-  padding: 0 20mm;
-  background-color: lightgray;
-  color: white;
+  padding: 0 20px;
+  background-color: #e0f7fa;
   position: relative;
-}
-
-#DSATopicsTitle {
-  color: black;
-  width: 180px;
-  height: 30px;
-  background-color: white;
-  font-size: 21px;
 }
 
 .quizOptionsDropdown {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%)
+  transform: translateX(-50%);
 }
 
 .quizBox {
-  background-color: lightgray;
+  background-color: #e0f7fa;
   width: 300px;
   height: 300px;
   display: flex;
@@ -37,40 +30,64 @@
   justify-content: space-between;
   padding: 20px;
   margin: 30px;
-}
-
-button {
-  background-color: white;
-  border: 2px solid lightgray;
-  padding: 5px 15px;
-  cursor: pointer;
-  color: deepskyblue;
-}
-
-input[type="submit"]:hover {
-  background-color: #cacaca;
-  border-color: darkgray;
-}
-
-button:hover {
-  background-color: #cacaca;
-  border-color: darkgray;
-}
-
-.quizDescription {
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 52px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .quizTitle {
   font-size: 20px;
   font-weight: bold;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #00bfff;
+}
+
+.quizDescription {
+  font-size: 16px;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-bottom: 52px;
 }
 
 .quizzesContainer {
   display: flex;
   flex-wrap: wrap;
+}
+
+button {
+  background-color: white;
+  border: 2px solid #87cefa;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: #00bfff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+button:hover, input[type="submit"]:hover {
+  background-color: #b0e0e6;
+  border-color: #00bfff;
+  box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+@media (max-width: 768px) {
+  .quizzesTitle {
+    font-size: 28px;
+  }
+
+  .quizBox {
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+  }
+
+  button {
+    font-size: 14px;
+  }
+
+  .quizDescription {
+    font-size: 14px;
+  }
 }

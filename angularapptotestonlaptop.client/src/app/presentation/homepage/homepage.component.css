@@ -1,15 +1,47 @@
 .homepageTitle {
-  font-size: 40px;
+  font-size: 32px;
   position: relative;
   top: 10px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #00bfff;
 }
 
 .homepageIntroDiv {
-    background-color: lightgrey;
-    height: 50vh;
-    margin: 70px;
-    padding: 50px;
+  background-color: #e0f7fa;
+  height: 53vh;
+  margin: 70px;
+  padding: 40px 60px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .homepageImg {
+  max-width: 100%;
+  border-radius: 10px;
+}
+
+p {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+  max-width: 70vw;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+
+
+@media (max-width: 768px) {
+  .homepageTitle {
+    font-size: 28px;
+  }
+
+  .homepageIntroDiv {
+    padding: 30px 40px;
+    max-width: 90%;
+  }
+
+  p {
+    font-size: 14px;
+  }
 }
