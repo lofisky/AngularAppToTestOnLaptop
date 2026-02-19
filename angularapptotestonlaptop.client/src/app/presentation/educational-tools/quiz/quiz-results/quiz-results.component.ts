@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-quiz-results',
@@ -30,7 +31,7 @@ export class QuizResultsComponent {
 
     const quizId = this.activatedRoute.snapshot.paramMap.get('id');
 
-    this.http.get<any[]>(`https://localhost:7109/api/quizzes/getQuizQuestionsForQuiz?id=${quizId}`)
+    this.http.get<any[]>(`${environment.apiBaseUrl}/quizzes/getQuizQuestionsForQuiz?id=${quizId}`)
       .subscribe(quizQuestions => {
         this.quizQuestions = quizQuestions;
       });

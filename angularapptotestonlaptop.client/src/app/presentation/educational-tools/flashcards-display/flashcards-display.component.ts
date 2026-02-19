@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-flashcards-display',
@@ -18,7 +19,7 @@ export class FlashcardsDisplayComponent {
   ngOnInit(): void {
     const flashcardSetId = this.route.snapshot.paramMap.get('id'); //get flashcardset id from this url
 
-    this.http.get<any[]>(`https://localhost:7109/api/flashcards/getFlashcardsForSet?id=${flashcardSetId}`)
+    this.http.get<any[]>(`${environment.apiBaseUrl}/flashcards/getFlashcardsForSet?id=${flashcardSetId}`)
       .subscribe(flashcards => {
         this.flashcards = flashcards;
         if (flashcards.length > 0) {

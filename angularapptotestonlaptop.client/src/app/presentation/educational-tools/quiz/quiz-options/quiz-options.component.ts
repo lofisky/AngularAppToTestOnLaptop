@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../../../../environments/environment';
 
 @Component({
   selector: 'app-quiz-options',
@@ -41,7 +42,7 @@ export class QuizOptionsComponent {
   fetchQuizzes(topic: string): void {
     this.quizMessage = '';
 
-    this.http.get<any[]>(`https://localhost:7109/api/quizzes/getQuizzes?topic=${topic}`)
+    this.http.get<any[]>(`${environment.apiBaseUrl}/quizzes/getQuizzes?topic=${topic}`)
       .subscribe(quizzes => {
         if (quizzes && quizzes.length > 0) {
           this.quizzes = quizzes;

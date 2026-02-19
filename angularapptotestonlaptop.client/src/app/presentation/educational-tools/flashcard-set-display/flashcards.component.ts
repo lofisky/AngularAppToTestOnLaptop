@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-flashcards',
@@ -41,7 +42,7 @@ export class FlashcardsComponent implements OnInit {
   fetchFlashcards(topic: string): void {
     this.flashcardMessage = '';
 
-    this.http.get<any[]>(`https://localhost:7109/api/flashcards/getFlashcardSets?topic=${topic}`)
+    this.http.get<any[]>(`${environment.apiBaseUrl}/flashcards/getFlashcardSets?topic=${topic}`)
       .subscribe(flashcards => {
         if (flashcards && flashcards.length > 0) {
           this.flashcardSets = flashcards;
