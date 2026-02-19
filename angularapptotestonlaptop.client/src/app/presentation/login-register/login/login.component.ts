@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-login',
@@ -26,7 +27,7 @@ export class LoginComponent {
     this.password = this.password.trim();
 
     if (this.email && this.password) {
-      this.http.post<{ username: string, email: string }>('https://localhost:7109/api/auth/login', {
+      this.http.post<{ username: string, email: string }>(`${environment.apiBaseUrl}/auth/login`, {
         email: this.email,
         password: this.password
       }).subscribe(user => {

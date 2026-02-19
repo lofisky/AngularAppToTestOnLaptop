@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from '../../../environments/environment';
 
 @Component({
   selector: 'app-ai-chat',
@@ -20,7 +21,7 @@ export class AiChatComponent {
 
     this.isAiTyping = true;
 
-    this.http.post<any>('https://localhost:7109/api/askAi/sendQuery', { userMessage: this.userMessage }).subscribe(
+    this.http.post<any>(`${environment.apiBaseUrl}/askAi/sendQuery`, { userMessage: this.userMessage }).subscribe(
       (response) => {
         if (response && response.aiResponse) { //empty or null
           this.messages.push({ content: response.aiResponse, sender: 'ai' });

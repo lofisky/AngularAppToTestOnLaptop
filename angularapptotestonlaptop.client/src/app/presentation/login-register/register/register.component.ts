@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-register',
@@ -27,7 +28,7 @@ export class RegisterComponent {
     if (this.username && this.userEmail && this.userPassword) {
       this.registerMessage = '';
 
-      this.http.post<boolean>('https://localhost:7109/api/auth/register', {
+      this.http.post<boolean>(`${environment.apiBaseUrl}/auth/register`, {
         username: this.username,
         userEmail: this.userEmail,
         userPassword: this.userPassword
