@@ -10,7 +10,7 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngularApp", policy =>
     {
-        policy.WithOrigins("https://localhost:63937").AllowAnyHeader().AllowAnyMethod();
+        policy.WithOrigins("https://localhost:63937", "https://dsarena.runasp.net").AllowAnyHeader().AllowAnyMethod();
     });
 });
 

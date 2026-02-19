@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiBaseUrl: 'https://dsarena.runasp.net/api'
+  apiBaseUrl: 'http://dsarena.runasp.net/api'
 };
