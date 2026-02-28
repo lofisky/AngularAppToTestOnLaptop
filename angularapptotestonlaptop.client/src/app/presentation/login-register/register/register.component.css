@@ -94,10 +94,17 @@ button[type="submit"]:disabled {
 }
 
 .registerMessage {
-  color: #ff6347;
   font-size: 14px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   text-shadow: 0 0 3px rgba(255, 99, 71, 0.7);
+}
+
+.errorRegisterMessage {
+  color: #ff6347;
+}
+
+.successRegisterMessage {
+  color: #3ed900;
 }
 
 p {
