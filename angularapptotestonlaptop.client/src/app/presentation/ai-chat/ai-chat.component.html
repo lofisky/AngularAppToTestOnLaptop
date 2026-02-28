@@ -14,7 +14,7 @@
   </div>
 
   <div class="userInputBar">
-    <input type="text" [(ngModel)]="userMessage" placeholder="Type your message here" (keyup.enter)="sendMessage()">
+    <textarea type="text" [(ngModel)]="userMessage" placeholder="Type your message here" (keyup.enter)="sendMessage()"></textarea>
     <button type="button" class="sendBtn" (click)="sendMessage()">➜</button>
   </div>
 </div>

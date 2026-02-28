@@ -14,9 +14,7 @@
     </li>
   </ul>
 
-  <div *ngIf="quizMessage" class="quizMessage">
-    <p>{{ quizMessage }}</p>
-  </div>
+
 
   <button class="submitButton" (click)="submitQuiz()">Submit</button>
 
@@ -24,6 +22,10 @@
     <button (click)="prevQuestion()" [disabled]="currentIndex === 0" class="flipped-arrow">➜</button>
     <button (click)="nextQuestion()" [disabled]="currentIndex === quizQuestions.length - 1">➜</button>
   </div>
+</div>
+
+<div *ngIf="quizMessage" class="quizMessage">
+  <p>{{ quizMessage }}</p>
 </div>
 
 <div class="quitButton" (click)="redirectToQuizOptionsPage()">Quit</div>
