@@ -17,7 +17,7 @@ export class DiagrammingComponent implements AfterViewInit {
   private cx: CanvasRenderingContext2D | null = null;
   public currentColor: string = '#000000'; //default color black
   //list of color options
-  public colors: string[] = ['#000000', '#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF'];
+  public colors: string[] = ['#000000', '#FF0000', '#00FF00', '#0000FF', '#FFFF00', '#FF00FF', '#00FFFF', '#FFFFFF'];
 
   public ngAfterViewInit() {
     const canvasEl: HTMLCanvasElement = this.canvas.nativeElement;
