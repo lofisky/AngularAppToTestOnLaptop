@@ -10,8 +10,11 @@
         <div *ngIf="emailField.errors?.['required']">Email is required.</div>
         <div *ngIf="emailField.errors?.['email']">Invalid email format.</div>
       </div>
-      <input type="password" [(ngModel)]="userPassword" name="userPassword" placeholder="Password Input" required #passwordField="ngModel">
-      <div *ngIf="passwordField.touched && passwordField.invalid" class="error-message">Password is required.</div><br />
+      <input type="password" [(ngModel)]="userPassword" name="userPassword" placeholder="Password Input" required minlength="8" #passwordField="ngModel">
+      <div *ngIf="passwordField.touched && passwordField.invalid" class="error-message">
+        <div *ngIf="passwordField.errors?.['required']">Password is required.</div>
+        <div *ngIf="passwordField.errors?.['minlength']">Password must be at least 8 characters long.</div>
+      </div>
     </div>
 
     <div class="createProfileButtonDiv">
@@ -21,4 +24,4 @@
   </form>
 </div>
 
-<p class="registerMessage" *ngIf="registerMessage"> {{ registerMessage }} </p>
+<p class="registerMessage" *ngIf="registerMessage" [ngClass]="{'errorRegisterMessage': registerMessage.includes('failed') || registerMessage.includes('fill'), 'successRegisterMessage': registerMessage.includes('Welcome')}"> {{ registerMessage }} </p>
