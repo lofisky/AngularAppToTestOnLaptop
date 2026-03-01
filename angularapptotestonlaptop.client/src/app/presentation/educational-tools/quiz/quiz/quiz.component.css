@@ -38,6 +38,8 @@
   width: 40vw;
   align-items: center;
   padding: 0;
+  position: relative;
+  top: -70px;
 }
 
 .quizMissingMessage {
