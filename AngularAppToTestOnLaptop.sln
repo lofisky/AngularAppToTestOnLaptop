@@ -1,11 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.14.36717.8 d17.14
+VisualStudioVersion = 17.14.36717.8
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "angularapptotestonlaptop.client", "angularapptotestonlaptop.client\angularapptotestonlaptop.client.esproj", "{EC407175-3D89-35F9-A796-65574B69116F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AngularAppToTestOnLaptop.Server", "AngularAppToTestOnLaptop.Server\AngularAppToTestOnLaptop.Server.csproj", "{381206F5-EB8A-4814-9375-70BF2604D936}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSArenaTestProject", "DSArenaTestProject\DSArenaTestProject.csproj", "{32905F72-AE07-4C3C-9418-8F55D2C37935}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +25,10 @@ Global
 		{381206F5-EB8A-4814-9375-70BF2604D936}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{381206F5-EB8A-4814-9375-70BF2604D936}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{381206F5-EB8A-4814-9375-70BF2604D936}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32905F72-AE07-4C3C-9418-8F55D2C37935}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32905F72-AE07-4C3C-9418-8F55D2C37935}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32905F72-AE07-4C3C-9418-8F55D2C37935}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32905F72-AE07-4C3C-9418-8F55D2C37935}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

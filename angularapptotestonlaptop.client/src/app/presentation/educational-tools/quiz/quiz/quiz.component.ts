@@ -74,7 +74,7 @@ export class QuizComponent {
   }
 
   calculateScore(): void {
-    this.score = this.selectedOptions.reduce((score, option, index) => {
+    this.score = this.selectedOptions.reduce((score, option, index) => { //reduce for callback and accumulated result
       if (option === this.quizQuestions[index].options.split('/')[this.quizQuestions[index].correctOptionsIndex]) { //compare each ans to correct ans on each page
         return score + 1;
       }

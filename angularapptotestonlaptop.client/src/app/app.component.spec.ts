@@ -1,6 +1,8 @@
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { RouterTestingModule } from '@angular/router/testing';
+import { NavbarComponent } from './presentation/navbar/navbar.component';
 
 describe('AppComponent', () => {
   let component: AppComponent;
@@ -9,8 +11,8 @@ describe('AppComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [AppComponent],
-      imports: [HttpClientTestingModule]
+      declarations: [AppComponent, NavbarComponent],
+      imports: [HttpClientTestingModule, RouterTestingModule]
     }).compileComponents();
   });
 
@@ -18,6 +20,7 @@ describe('AppComponent', () => {
     fixture = TestBed.createComponent(AppComponent);
     component = fixture.componentInstance;
     httpMock = TestBed.inject(HttpTestingController);
+    fixture.detectChanges();
   });
 
   afterEach(() => {
@@ -26,20 +29,5 @@ describe('AppComponent', () => {
 
   it('should create the app', () => {
     expect(component).toBeTruthy();
-  });
-
-  it('should retrieve weather forecasts from the server', () => {
-    const mockForecasts = [
-      { date: '2021-10-01', temperatureC: 20, temperatureF: 68, summary: 'Mild' },
-      { date: '2021-10-02', temperatureC: 25, temperatureF: 77, summary: 'Warm' }
-    ];
-
-    component.ngOnInit();
-
-    const req = httpMock.expectOne('/weatherforecast');
-    expect(req.request.method).toEqual('GET');
-    req.flush(mockForecasts);
-
-    expect(component.forecasts).toEqual(mockForecasts);
   });
 });
