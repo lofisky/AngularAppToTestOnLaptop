@@ -28,7 +28,6 @@ export class FlashcardsDisplayComponent {
       });
   }
 
-
   redirectToFlashcardOptionsPage() {
     this.router.navigate(['/flashcards']);
   }

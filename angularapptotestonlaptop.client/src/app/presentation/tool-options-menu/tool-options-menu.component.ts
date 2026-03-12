@@ -8,10 +8,10 @@ import { Component, Output, EventEmitter } from '@angular/core';
 export class ToolOptionsMenuComponent {
   selectedTopic: string = 'Two pointers'; //default topic
 
-  @Output() topicChanged = new EventEmitter<string>();
+  @Output() topicChanged = new EventEmitter<string>(); //define variable that gets emitted from this component
 
   onTopicChange(event: any) {
-    this.selectedTopic = event.target.value;
-    this.topicChanged.emit(this.selectedTopic);
+    this.selectedTopic = event.target.value; //extract the new event's value thats the new topic
+    this.topicChanged.emit(this.selectedTopic); //send that selected topic into the variable
   }
 }

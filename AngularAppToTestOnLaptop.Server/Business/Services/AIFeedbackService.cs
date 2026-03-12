@@ -1,10 +1,7 @@
 ﻿using AngularAppToTestOnLaptop.Server.Business.Interfaces;
-using Microsoft.AspNetCore.Mvc.Formatters;
-using System.Linq.Expressions;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace AngularAppToTestOnLaptop.Server.Business.Services
 {

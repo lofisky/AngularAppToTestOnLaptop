@@ -19,13 +19,9 @@ namespace AngularAppToTestOnLaptop.Server.Controllers
         public ActionResult<UserDTO> Login(LoginRequestDTO request)
         {
             var user = _authService.Login(request.Email, request.Password);
-            if(user == null) return Unauthorized();
+            if(user == null) return Unauthorized(); //can return this, actionresult is flexible and can take results or types
 
-            return Ok(new UserDTO
-            {
-                Username = user.Username,
-                Email = user.Email
-            });
+            return Ok(new UserDTO{ Username = user.Username, Email = user.Email });
         }
     }
 }
